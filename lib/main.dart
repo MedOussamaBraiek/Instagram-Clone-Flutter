@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
-        MessagesPage.id: (context) => const MessagesPage(),
+        MessagesPage.id: (context) => MessagesPage(),
       },
     );
   }

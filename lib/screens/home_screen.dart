@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/post_widget.dart';
+import 'package:instagram/widgets/post_widget.dart';
 import 'package:instagram/screens/messages_screen.dart';
-import 'package:instagram/story_widget.dart';
+import 'package:instagram/widgets/story_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,11 +15,19 @@ class HomePage extends StatelessWidget {
       //Landing Page
       backgroundColor: Colors.white,
       appBar: AppBar(
+        titleSpacing: 0,
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Image.asset(
-          'assets/images/instagram-logo.png',
-          height: 60,
+        title: Row(
+          children: [
+            const SizedBox(
+              width: 10,
+            ),
+            Image.asset(
+              'assets/images/instagram-logo.png',
+              height: 60,
+            ),
+          ],
         ),
         iconTheme: const IconThemeData(
           color: Colors.black, //change your color here

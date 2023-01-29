@@ -15,7 +15,7 @@ class PostWidget extends StatelessWidget {
     {
       "pseudo": 'Tunisia',
       "photo": "assets/images/photo/photo-2.jpeg",
-      "photoProfile": "assets/images/profile/photo-4.webp",
+      "photoProfile": "assets/images/profile/photo-2.jpeg",
       "description":
           "🤩🤩 good food,contact with different people, contact with different people",
       "likes": "2125"
@@ -23,7 +23,7 @@ class PostWidget extends StatelessWidget {
     {
       "pseudo": 'France',
       "photo": "assets/images/photo/photo-3.jpeg",
-      "photoProfile": "assets/images/profile/photo-4.webp",
+      "photoProfile": "assets/images/profile/photo-3.jpeg",
       "description": "😩 good food, contact with different people",
       "likes": "3509"
     },
@@ -38,7 +38,7 @@ class PostWidget extends StatelessWidget {
     {
       "pseudo": 'sonTomato',
       "photo": "assets/images/photo/photo-5.jpeg",
-      "photoProfile": "assets/images/profile/photo-4.webp",
+      "photoProfile": "assets/images/profile/photo-5.jpeg",
       "description":
           "😭😩 bad and irregular food, contact with different people",
       "likes": "43"
@@ -54,7 +54,7 @@ class PostWidget extends StatelessWidget {
             Container(
               height: 50,
               margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 13),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: [
                   CircleAvatar(
@@ -103,7 +103,7 @@ class PostWidget extends StatelessWidget {
               ],
             ),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(children: [
                 CircleAvatar(
                   radius: 10,
