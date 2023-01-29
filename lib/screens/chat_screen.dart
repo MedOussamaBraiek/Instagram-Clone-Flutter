@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:instagram/models/message.dart';
 import 'package:grouped_list/grouped_list.dart';
@@ -87,6 +89,8 @@ List<Message> messages = [
       text: 'Thank you 😊',
       isSentByMe: true),
 ];
+
+TextEditingController messageController = TextEditingController(text: '');
 
 class _ChatPageState extends State<ChatPage> {
   @override
@@ -207,6 +211,7 @@ class _ChatPageState extends State<ChatPage> {
             ),
             height: 40,
             child: TextFormField(
+              controller: messageController,
               style: const TextStyle(fontSize: 14),
               decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -278,7 +283,10 @@ class _ChatPageState extends State<ChatPage> {
               onFieldSubmitted: (text) {
                 final message =
                     Message(text: text, date: DateTime.now(), isSentByMe: true);
-                text != '' ? setState(() => messages.add(message)) : null;
+                text != ''
+                    ? setState(() =>
+                        {messages.add(message), messageController.text = ''})
+                    : null;
               },
             ),
           )
