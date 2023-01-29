@@ -20,7 +20,10 @@ class MessageWidget extends StatelessWidget {
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
       ),
-      trailing: const Icon(Icons.camera_alt_outlined),
+      trailing: IconButton(
+        icon: const Icon(Icons.camera_alt_outlined),
+        onPressed: () {},
+      ),
     );
   }
 }

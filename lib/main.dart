@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/chat_screen.dart';
 import 'package:instagram/screens/home_screen.dart';
 import 'package:instagram/screens/messages_screen.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(),
         MessagesPage.id: (context) => MessagesPage(),
+        ChatPage.id: (context) => ChatPage()
       },
     );
   }

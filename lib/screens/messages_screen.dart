@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:instagram/screens/chat_screen.dart';
 import 'package:instagram/widgets/message_widget.dart';
 
 class MessagesPage extends StatelessWidget {
@@ -144,7 +145,36 @@ class MessagesPage extends StatelessWidget {
           child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            child: TextFormField(
+              cursorColor: Colors.grey.shade600,
+              textAlignVertical: TextAlignVertical.center,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                isDense: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                  borderSide: BorderSide.none,
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                filled: true,
+                fillColor: const Color.fromRGBO(239, 239, 239, 1),
+                focusColor: Colors.white,
+                hintText: 'Search',
+                hintStyle: const TextStyle(color: Colors.grey),
+                prefixIcon: const Icon(
+                  Icons.search,
+                  color: Colors.grey,
+                  size: 20,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -158,10 +188,15 @@ class MessagesPage extends StatelessWidget {
           ),
           Column(
             children: messageItems.map((message) {
-              return MessageWidget(
-                pseudo: message['pseudo'],
-                image: message['photoProfile'],
-                message: message['time'],
+              return GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, ChatPage.id);
+                },
+                child: MessageWidget(
+                  pseudo: message['pseudo'],
+                  image: message['photoProfile'],
+                  message: message['time'],
+                ),
               );
             }).toList(),
           )

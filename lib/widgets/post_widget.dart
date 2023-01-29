@@ -58,6 +58,7 @@ class PostWidget extends StatelessWidget {
               child: Row(
                 children: [
                   CircleAvatar(
+                    radius: 15,
                     backgroundImage: AssetImage(post['photoProfile']),
                   ),
                   const SizedBox(
@@ -65,7 +66,8 @@ class PostWidget extends StatelessWidget {
                   ),
                   Text(
                     post['pseudo'],
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 13),
                   ),
                   const SizedBox(
                     width: 5,
